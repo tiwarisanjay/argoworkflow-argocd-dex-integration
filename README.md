@@ -32,7 +32,7 @@ ArgoCD with Dex Configuration
 - Click on Single Sign On. 
 - Congratulations you should have authenticated with your AzureAD account. :) 
 
-##Failures Points for me: 
+## Failures Points for me: 
 1.  If you mention wrong URL for Issuer in `argocd-cm` configmap it will keep on giving you `404 page not found` error. 
 2. If you mention wrong issuer url for `workflow-controller-configmap` configmap it will also give you `404 page not found` error. 
 3. If you have not use `insecureSkipVerify: true` flag in `workflow-controller-configmap` argo-workflow server pod will give you certificate error. 
