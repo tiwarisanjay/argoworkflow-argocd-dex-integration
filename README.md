@@ -24,10 +24,9 @@ ArgoCD with Dex Configuration
     ```
     kubectl apply -k microsoft-connector/
     ```
+- Restart your argo-server, argocd-server and dex pod if you are seening error as they might not have picked the changes from configmap. 
 - If you are using localhost please port-forward you ArgoCD server and Argoworkflow server and update the config map with Right port. 
 - Now port-forward your server to localhost or use the loadbalancer IP and you should see following screen: 
 - URL should be : 
     -   https://localhost OR https://\<LoadBalancerIP>
     - Click on AZURETEST and it should authenticate your with AzureAD
-
-    ![Login Page](ss/Login.JPG)
