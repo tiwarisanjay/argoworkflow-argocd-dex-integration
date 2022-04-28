@@ -1,6 +1,6 @@
 # argocd-dex
 ArgoCD with Dex Configuration
-# ArgoCD Dex Integration with Microsoft connector 
+# ArgoWorkflow/ArgoCD Dex Integration AzureAD using dex Microsoft connector 
 ## Prerequsites 
 - Create new application in AzureAD OIDC follow following link for the same
     [Quick Start : Register an application](https://docs.microsoft.com/en-us/azure/active-directory/develop/quickstart-register-app)
@@ -26,7 +26,12 @@ ArgoCD with Dex Configuration
     ```
 - Restart your argo-server, argocd-server and dex pod if you are seening error as they might not have picked the changes from configmap. 
 - If you are using localhost please port-forward you ArgoCD server and Argoworkflow server and update the config map with Right port. 
-- Now port-forward your server to localhost or use the loadbalancer IP and you should see following screen: 
-- URL should be : 
-    -   https://localhost OR https://\<LoadBalancerIP>
-    - Click on AZURETEST and it should authenticate your with AzureAD
+- Now port-forward your argo workflow server to localhost or use the loadbalancer IP. 
+- Click on Single Sign On. 
+- Congratulations you should have authenticated with your AzureAD account. :) 
+
+Failures Points for me: 
+1.  If you mention wrong URL for Issuer in `argocd-cm` configmap it will keep on giving you `404 page not found` error. 
+2. If you mention wrong issuer url for `workflow-controller-configmap` configmap it will also give you `404 page not found` error. 
+3. If you have not use `insecureSkipVerify: true` flag in `workflow-controller-configmap` argo-workflow server pod will give you certificate error. 
+4. If your ID is incorrect for `staticClient` setup in `argocd-cm` configmap it wil give you `invalid client_id("your-right-id")` error. Though you will see the Right ClientID in your msg and this is pretty confusing and took me 3 days to solve the issue as nothing was pointing where its wrong. 
