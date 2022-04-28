@@ -45,7 +45,7 @@ data:
         clientID: <Your Clinet/ApplicationID of Azure app>
         clientSecret: $oidc.azure.clientSecret
         redirectURI: https://22.222.222.222/api/dex/callback
-        tenant: 0a95682f-3aaf-45a2-bf70-54f526caf0fd
+        tenant: 0a35682f-3hhf-4552-b670-34343caf0fd
     staticClients:
       - id: <Your Clinet/ApplicationID of Azure app>
         name: Argo Workflow
