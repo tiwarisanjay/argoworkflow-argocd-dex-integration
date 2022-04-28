@@ -20,8 +20,6 @@ ArgoCD with Dex Configuration
                                             If you create a nodeport type service it should be `localhost:nodeport`
                                             If you create a loadbalancer it will be your `loadbalancerIP`
         - https://11.111.11.111:2746    : Its your argo workflow server `LoadBalancerIP:port`  or `localhost:port` 
-        - 
-        - 
 -   Lets Install everything 
     ```
     kubectl apply -k microsoft-connector/
