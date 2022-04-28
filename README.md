@@ -22,17 +22,11 @@ ArgoCD with Dex Configuration
         - https://11.111.11.111:2746    : Its your argo workflow server `LoadBalancerIP:port`  or `localhost:port` 
         - 
         - 
--   Lets first apply the file with configmap and secret changes 
+-   Lets Install everything 
     ```
-    kubectl apply -f microsoft-connector/argocd-extra.yaml -n argo 
+    kubectl apply -k microsoft-connector/
     ```
-- Lets install argocd now
-    ```
-    kubectl apply -f microsoft-connector/argocd-install.yaml -n argo 
-    ```
-- Install argo workflow now
-    ```
-    kubectl apply -f 
+- If you are using localhost please port-forward you ArgoCD server and Argoworkflow server and update the config map with Right port. 
 - Now port-forward your server to localhost or use the loadbalancer IP and you should see following screen: 
 - URL should be : 
     -   https://localhost OR https://\<LoadBalancerIP>
