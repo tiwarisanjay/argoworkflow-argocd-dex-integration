@@ -1,0 +1,15 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+commonLabels:
+  "app.kubernetes.io/name": "argo-cd"
+  "app.kubernetes.io/created-by" : "tiwarisanjay"
+  "app.kubernetes.io/managed-by": "Sanjay-Tiwari"
+
+resources:
+  - argo-ns.yaml
+  - argocd-extra.yaml 
+  - argocd-install.yaml
+  - argoworkflow-install.yaml
+  - argoworkflow-extra.yaml 
+namespace: argo 
