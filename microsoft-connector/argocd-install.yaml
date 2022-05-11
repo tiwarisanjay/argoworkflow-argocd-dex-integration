@@ -9535,7 +9535,7 @@ metadata:
   name: argocd-dex-server
 spec:
   type: LoadBalancer
-  loadBalancerIP: 34.69.30.95
+  loadBalancerIP: 22.222.222.222
   ports:
   - name: http
     port: 5556

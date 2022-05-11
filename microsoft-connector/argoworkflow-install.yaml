@@ -1035,7 +1035,7 @@ metadata:
   namespace: argo
 spec:
   type: LoadBalancer
-  loadBalancerIP: 34.123.67.93
+  loadBalancerIP: 11.111.11.111
   ports:
   - name: web
     port: 2746
